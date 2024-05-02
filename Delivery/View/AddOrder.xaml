@@ -1,0 +1,38 @@
+﻿<Window x:Class="Delivery.View.AddOrder"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Delivery.View"
+        mc:Ignorable="d"
+        Title="Добавить заказ" Height="450" Width="250">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="30" />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical" Margin="10, 0, 10, 10">
+            
+            <Label Content="Товар" />
+            <ComboBox ItemsSource="{Binding Food}" SelectedItem="{Binding SelectedFood}"/>
+
+            <Label Content="Клиент" />
+            <ComboBox ItemsSource="{Binding Clients}" SelectedItem="{Binding SelectedClient}"/>
+
+            <Label Content="Работник" />
+            <ComboBox ItemsSource="{Binding Workers}" SelectedItem="{Binding SelectedWorker}"/>
+
+            <Label Content="Цена" />
+            <TextBox Text="{Binding Price}" />
+            
+            <Label Content="Адрес" />
+            <TextBox Text="{Binding Address}" />
+
+            <Label Content="Статус" />
+            <TextBox Text="{Binding Status}" />
+        </StackPanel>
+
+        <Button Grid.Row="1" Content="Добавить" Command="{Binding AddOrderCommand}"/>
+
+    </Grid>
+</Window>
